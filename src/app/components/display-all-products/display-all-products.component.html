@@ -1,0 +1,23 @@
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>userId</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Category</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let product of productsTab">
+        <td>{{product.id}}</td>
+        <td>{{product.userId}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.stock}}</td>
+        <td>{{product.category}}</td>
+        <td>
+            <button class="btn btn-info" (click)="goToDisplay(product.id)" >Display</button>
+            
+        </td>
+    </tr>
+</table>

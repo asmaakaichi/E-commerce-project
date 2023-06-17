@@ -1,0 +1,109 @@
+<!-- start banner Area -->
+<section class="banner-area">
+    <div class="container">
+      <div class="row fullscreen align-items-center justify-content-start">
+        <div class="col-lg-12">
+          <div class="active-banner-slider owl-carousel">
+            <!-- single-slide -->
+            <div class="row single-slide align-items-center d-flex">
+              <div class="col-lg-5 col-md-6">
+                <div class="banner-content">
+                  <h1>Add Product </h1>
+                 
+              
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="banner-img">
+                  <img class="img-fluid" src="assets/img/banner/banner-img.png" alt="">
+                </div>
+              </div>
+            </div>
+            <!-- single-slide -->
+            <div class="row single-slide">
+              <div class="col-lg-5">
+                <div class="banner-content">
+                  <h1>Add Product</h1>
+                 
+                  <div class="add-bag d-flex align-items-center">
+                    <a class="add-btn" href=""><span class="lnr lnr-cross"></span></a>
+                    <span class="add-text text-uppercase">Add to Bag</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="banner-img">
+                  <img class="img-fluid" src="assets/img/banner/banner-img.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<div class="site-section">
+    <div class="container">
+        <div class="col-lg-12">
+            <form [formGroup]="productForm">
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="name" placeholder="Name">
+                </div>
+                <div *ngIf="productForm.controls['name'].invalid && 
+                (productForm.controls['name'].touched || 
+                productForm.controls['name'].dirty)">
+                    <div *ngIf="productForm.controls['name'].errors.required">
+                       Name is required
+                    </div>
+                    <div *ngIf="productForm.controls['name'].errors.minlength">
+                         Name must have at least 3 chars
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" formControlName="price" placeholder="Price">
+                </div>
+                <div *ngIf="productForm.controls['price'].invalid && 
+                (productForm.controls['price'].touched || 
+                productForm.controls['price'].dirty)">
+                    <div *ngIf="productForm.controls['price'].errors.required" style="color: red;">
+                        Price is required
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="stock" placeholder="Stock">
+                </div>
+                
+                <div *ngIf="productForm.controls['stock'].invalid && 
+                (productForm.controls['stock'].touched || 
+                productForm.controls['stock'].dirty)">
+                    <div *ngIf="productForm.controls['stock'].errors.required" style="color: red;">
+                       Stock is required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="category" placeholder="Category">
+                </div>
+                <div *ngIf="productForm.controls['category'].invalid && 
+                (productForm.controls['category'].touched || 
+                productForm.controls['category'].dirty)">
+                    <div *ngIf="productForm.controls['category'].errors.required" style="color: red;">
+                        Category is required
+                    </div>
+                   
+                </div>
+
+                
+              
+                
+                <div class="form-group">
+                    <input type="submit" (click)="addProduct()" [disabled]="productForm.invalid"
+                        class="btn btn-primary py-3 px-5" value="Add Product">
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+</div>

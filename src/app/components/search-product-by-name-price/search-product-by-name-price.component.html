@@ -1,0 +1,106 @@
+<!-- start banner Area -->
+<section class="banner-area">
+    <div class="container">
+      <div class="row fullscreen align-items-center justify-content-start">
+        <div class="col-lg-12">
+          <div class="active-banner-slider owl-carousel">
+            <!-- single-slide -->
+            <div class="row single-slide align-items-center d-flex">
+              <div class="col-lg-5 col-md-6">
+                <div class="banner-content">
+                  <h1>Search Product </h1>
+                 
+              
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="banner-img">
+                  <img class="img-fluid" src="assets/img/banner/banner-img.png" alt="">
+                </div>
+              </div>
+            </div>
+            <!-- single-slide -->
+            <div class="row single-slide">
+              <div class="col-lg-5">
+                <div class="banner-content">
+                  <h1>Search Product</h1>
+                 
+                  <div class="add-bag d-flex align-items-center">
+                    <a class="add-btn" href=""><span class="lnr lnr-cross"></span></a>
+                    <span class="add-text text-uppercase">Add to Bag</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="banner-img">
+                  <img class="img-fluid" src="assets/img/banner/banner-img.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<div class="site-section" style="margin-top: 5%;">
+    <div class="container">
+        <div class="col-lg-12">
+            <form [formGroup]="searchForm">
+               
+                <div class="form-group">
+                    <input type="tel" class="form-control" formControlName="name" placeholder="Search By name">
+                    
+                </div>
+                
+               
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="price" placeholder="Search By Price">
+                </div>
+               
+                <div class="form-group">
+                    <input type="submit" (click)="search()" [disabled]="loginForm.invalid"
+                        class="btn btn-primary py-3 px-5" value="Search">
+                </div>
+            </form>
+        </div>
+        <div *ngFor="let f of findedProduct" class="single-product">
+            <img class="img-fluid" [src]="f.img" alt="">
+            <div class="product-details">
+              <h6>{{f.name}}</h6>
+              <div class="price">
+                <h6>{{f.price}}</h6>
+      
+              </div>
+              <div class="price">
+                <h6>Stock:{{f.stock}}</h6>
+      
+              </div>
+              <div class="price">
+                <h6>Category:{{f.category}}</h6>
+      
+              </div>
+              <div class="prd-bottom">
+
+                <a href="" class="social-info">
+                  <span class="ti-bag"></span>
+                  <p class="hover-text">add to bag</p>
+                </a>
+                <a href="" class="social-info">
+                  <span class="lnr lnr-heart"></span>
+                  <p class="hover-text">Wishlist</p>
+                </a>
+                <a href="" class="social-info">
+                  <span class="lnr lnr-sync"></span>
+                  <p class="hover-text">compare</p>
+                </a>
+                <a href="" class="social-info">
+                  <span class="lnr lnr-move"></span>
+                  <p class="hover-text">view more</p>
+                </a>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+</div>
